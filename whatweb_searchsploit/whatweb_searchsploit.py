@@ -16,7 +16,7 @@ def search_exploits(tech_versions):
     results = ""
     for tech, version in tech_versions:
         results += f"[+] Searching for exploits for.. {tech} {version}...\n"
-        search_result = subprocess.run(["searchsploit", "-w", "-t" f"{tech} {version}"], capture_output=True, text=True)
+        search_result = subprocess.run(["searchsploit", "-w", "-t", f"{tech} {version}"], capture_output=True, text=True)
         results += search_result.stdout + "\n"
     return results
 
